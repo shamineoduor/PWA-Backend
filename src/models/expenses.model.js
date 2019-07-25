@@ -20,6 +20,10 @@ module.exports = function(app) {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      description: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      }
     },
     {
       hooks: {
