@@ -5,29 +5,20 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function(app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const users = sequelizeClient.define(
-    'users',
+  const expenses = sequelizeClient.define(
+    'expenses',
     {
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      password: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      firstName: {
-        type: DataTypes.STRING,
+      expenseAmount: {
+        type: DataTypes.DECIMAL,
         allowNull: false,
       },
-      lastName: {
-        type: DataTypes.STRING,
+      userId: {
+        type: DataTypes.NUMBER,
         allowNull: false,
-      },
-      phoneNumber: {
-        type: DataTypes.STRING,
-        allowNull: true,
       },
     },
     {
@@ -40,10 +31,10 @@ module.exports = function(app) {
   );
 
   // eslint-disable-next-line no-unused-vars
-  users.associate = function(models) {
+  expenses.associate = function(models) {
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return users;
+  return expenses;
 };

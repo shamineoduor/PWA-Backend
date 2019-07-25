@@ -2,7 +2,7 @@
   "name": "feathers-backend",
   "description": "A simple backend to support my pwa front-end",
   "version": "0.0.0",
-  "homepage": "",
+  "homepage": "http://localhost:3030",
   "main": "src",
   "keywords": [
     "feathers"
