@@ -13,11 +13,11 @@ module.exports = function(app) {
         allowNull: false,
       },
       expenseAmount: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
       },
       userId: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
