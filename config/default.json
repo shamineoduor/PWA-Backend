@@ -5,5 +5,30 @@
   "paginate": {
     "default": 10,
     "max": 50
-  }
+  },
+  "authentication": {
+    "secret": "93cda13c11b5b140e80b3a16d1c63ac14c5e5cd0f49a9bf3453d2096204f26d2bef9bff708eab61ad60bf86f46060e082a3e9a66b4c5f837278a71f51829667f43d4f0e70f89bbf7a2cca0a6482b31bcf2ee8c327031dc4ee28fd3995f114c8aeed67fe6cc7efd559491bd26e7e01ead6acdaf56b60348f03d23b8b678de81a6d9cdf1113c850c72f106a1e550cdc54fc4983a9a641489996b02145849316641b911643a32a23c8b87ab723f728a4f2db02dde93eaeaa16d96d66573d81abf19b529eb21b2e726b56f919e56d57f1f4922add1933b6915589d480cd3f1cb1f68bf5c03aeba2e6a3fcca8448f0930edb01f18e695c8af50ddb9d36efade5e5f53",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mysql": "mysql://shamine:Sha123@localhost:8889/feathers_backend"
 }
